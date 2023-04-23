@@ -10,17 +10,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Adam Nowak</td>
-            <td>a.nowak@gmail.com</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jan Nowak</td>
-            <td>j.nowak@gmail.com</td>
-            <td></td>
+        <tr [ngClass]="{'table-primary':student.id == 2, 'table-success': student.id > 8}"
+            *ngFor="let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td><a *ngIf="student.id > 5" href="mailto:{{student.email}}">{{student.email}}</a> </td>
+            <td>
+                <button type="button" class="btn btn-outline-warning btn-margin-right btn-font-weight">Edit</button>
+                <button (click)="deleteStudent(student.id)" type="button" class="btn btn-outline-danger btn-margin-right btn-font-weight">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

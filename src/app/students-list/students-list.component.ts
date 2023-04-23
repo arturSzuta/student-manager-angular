@@ -8,6 +8,7 @@ import { Student } from '../model/student';
   styleUrls: ['./students-list.component.css'],
 })
 export class StudentsListComponent {
+
   students: Student[] | undefined;
   constructor(private studentService: StudentService) {
     this.studentService.getStudents().subscribe((data) => {
@@ -15,4 +16,8 @@ export class StudentsListComponent {
       console.log(this.students);
     });
   }
+  deleteStudent(id : number) {
+    console.log("Delete student " + id);
+    alert("Delete student with ID: " + id)
+    }
 }
