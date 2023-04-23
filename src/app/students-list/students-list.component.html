@@ -20,7 +20,7 @@
             <td>{{student.name | uppercase}}</td>
             <td><a *ngIf="student.id > 5" href="mailto:{{student.email}}">{{student.email}}</a> </td>
             <td>
-                <button type="button" class="btn btn-outline-warning btn-margin-right btn-font-weight">Edit</button>
+                <a routerLink="/edit-student/{{student.id}}" class="btn btn-outline-warning btn-margin-right btn-font-weight">Edit</a>
                 <button (click)="deleteStudent(student)" type="button"
                     class="btn btn-outline-danger btn-margin-right btn-font-weight">Delete</button>
             </td>

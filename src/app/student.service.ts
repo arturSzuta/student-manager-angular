@@ -12,11 +12,19 @@ export class StudentService {
   getStudents() {
     return this.http.get<Student[]>(this.studentsUrl);
   }
+  getStudent(id: number) {
+    const url = `${this.studentsUrl}/${id}`;
+    return this.http.get<Student>(url);
+  }
   deleteStudent(student: Student) {
     const url = `${this.studentsUrl}/${student.id}`;
     return this.http.delete<Student>(url);
   }
   addStudent(student: Student) {
     return this.http.post<Student>(this.studentsUrl, student);
+  }
+  updateStudent(student: Student) {
+    const url = `${this.studentsUrl}/${student.id}`;
+    return this.http.put<Student>(url, student);
   }
 }

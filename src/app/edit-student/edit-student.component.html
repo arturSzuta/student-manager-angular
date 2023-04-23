@@ -1,1 +1,23 @@
-<p>edit-student works!</p>
+<h2>Edit student</h2>
+
+<div class="row" *ngIf="student">
+    <div *ngIf="student">
+        <!-- Header -->
+        <h5>Editing student ID: {{student.id}} name: {{student.name}}</h5>
+    </div>
+    <div class="col">
+        <!-- Name -->
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" [(ngModel)]="student.name">
+    </div>
+    <div class="col">
+        <!-- email -->
+        <label class="form-label">Email</label>
+        <input class="form-control" type="email" [(ngModel)]="student.email">
+    </div>
+    <div>
+        <!-- save and back button -->
+        <button class="btn btn-outline-secondary component-margin-top btn-margin-right">Back</button>
+        <button (click)="update()" class="btn btn-outline-primary component-margin-top btn-margin-right">Send</button>
+    </div>
+</div>
