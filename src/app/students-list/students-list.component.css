@@ -2,5 +2,10 @@
   margin-right: 10px;
 }
 .btn-font-weight {
-    font-weight: bold;
+  font-weight: bold;
+}
+.center-spinner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
 }

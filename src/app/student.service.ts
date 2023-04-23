@@ -6,11 +6,14 @@ import { Student } from './model/student';
   providedIn: 'root',
 })
 export class StudentService {
+  private studentsUrl = 'https://jsonplaceholder.typicode.com/users/';
   constructor(private http: HttpClient) {}
 
   getStudents() {
-    return this.http.get<Student[]>(
-      'https://jsonplaceholder.typicode.com/users'
-    );
+    return this.http.get<Student[]>(this.studentsUrl);
+  }
+  deleteStudent(student: Student) {
+    const url = `${this.studentsUrl}/${student.id}`;
+    return this.http.delete<Student>(url);
   }
 }
