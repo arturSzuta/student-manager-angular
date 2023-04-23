@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { StudentsListComponent } from './students-list/students-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 @NgModule({
-  declarations: [AppComponent, StudentsListComponent, CreateStudentComponent],
+  declarations: [AppComponent, StudentsListComponent, CreateStudentComponent, EditStudentComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

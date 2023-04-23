@@ -11,10 +11,10 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add new student</a>
+          <a class="nav-link" [routerLinkActive]="['is-active']" [routerLink]="['/addStudent']">Add new student</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Students list</a>
+          <a class="nav-link" [routerLinkActive]="['is-active']" [routerLink]="['/students']">Students list</a>
         </li>
       </ul>
     </div>
@@ -22,8 +22,7 @@
 </nav>
 
 <div class="container-fluid">
-  <!-- <app-students-list></app-students-list> -->
-  <app-create-student></app-create-student>
+  <router-outlet></router-outlet>
 </div>
 <div class="navbar fixed-bottom" style="background-color: lightgrey;">
   <div class="container">

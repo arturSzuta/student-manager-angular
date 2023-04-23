@@ -4,15 +4,26 @@
     <div class="mb-4">
         <!-- Name -->
         <label class="form-label">Name</label>
-        <input class="form-control" type="text">
+        <input class="form-control" type="text" #name>
     </div>
     <div class="mb-4">
         <!-- email -->
         <label class="form-label">Email</label>
-        <input class="form-control" type="email">
+        <input class="form-control" type="email" #email>
     </div>
     <div class="mb-4">
         <!-- button -->
-        <button type="button" class="btn btn-outline-primary">Save</button>
+        <button [disabled]="isSendingPost" (click)="saveStudent(name.value , email.value)" type="button" class="btn btn-outline-primary">
+            <span *ngIf="isSendingPost" class="spinner-border spinner-border-sm" role="status"
+                aria-hidden="true"></span>
+            Save
+        </button>
+
     </div>
+</div>
+<div *ngIf="isRequiredValidadionFailed">
+    <p class="alert alert-danger" role="alert">Name/e-mail field is empty!</p>
+</div>
+<div *ngIf="isSavingSuccess" class="alert alert-success" role="alert">
+    {{successMessage}}
 </div>

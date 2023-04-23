@@ -16,4 +16,7 @@ export class StudentService {
     const url = `${this.studentsUrl}/${student.id}`;
     return this.http.delete<Student>(url);
   }
+  addStudent(student: Student) {
+    return this.http.post<Student>(this.studentsUrl, student);
+  }
 }

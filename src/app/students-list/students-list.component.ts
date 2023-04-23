@@ -21,7 +21,7 @@ export class StudentsListComponent implements OnInit {
   ngOnInit(): void {
     this.studentService
       .getStudents()
-      .pipe(delay(2000))
+      .pipe(delay(1000))
       .subscribe((data) => {
         this.students = data;
         console.log(this.students);
