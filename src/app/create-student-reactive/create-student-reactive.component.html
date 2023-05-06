@@ -1,0 +1,30 @@
+<h2>Add new student</h2>
+
+<form [formGroup]="addStudentForm" (ngSubmit)="saveStudent()">
+    <div>
+        <label class="form-label">Students name</label>
+        <input class="form-control" type="text" formControlName="name">
+        <div class="validation-message" *ngIf="f.name.errors?.['required']">
+            Student name is required
+        </div>
+        <div class="validation-message" *ngIf="f.name.errors?.['minlength']">
+            Student name can't be shoter than 3 letters
+        </div>
+    </div>
+    <div>
+        <label class="form-label">E-mail</label>
+        <input class="form-control" type="email" formControlName="email">
+        <div class="validation-message" *ngIf="f.email.errors?.['required']">
+            E-mail address is required
+        </div>
+        <div class="validation-message" *ngIf="f.email.errors?.['email']">
+            Invalid e-mail format
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-outline-primary">Save</button>
+    </div>
+</form>
+<div *ngIf="isSavingSuccess" class="alert alert-success" role="alert">
+    Student sended to server
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-detail-student-buttons',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./detail-student-buttons.component.css']
 })
 export class DetailStudentButtonsComponent {
+  @Output() onCancelClicked = new EventEmitter();
 
+
+  cancelClick(){
+    this.onCancelClicked.emit();
+  }
+
+  
 }
