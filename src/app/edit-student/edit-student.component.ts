@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudentService } from '../student.service';
 import { Student } from '../model/student';
+import { delay } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-student',
@@ -13,10 +15,12 @@ export class EditStudentComponent implements OnInit {
   // User notification
   // Cancel button implementation
   student!: Student;
+  isUpdaingSuccess = false;
+  isSendingPut = false;
 
   constructor(
     private route: ActivatedRoute,
-    private studentService: StudentService
+    private studentService: StudentService, private location : Location
   ) {}
 
   ngOnInit(): void {
@@ -27,8 +31,18 @@ export class EditStudentComponent implements OnInit {
     });
   }
   update() {
-    this.studentService.updateStudent(this.student).subscribe(() => {
-      console.log('Student data updated!');
-    });
+    this.isSendingPut = true;
+    this.studentService
+      .updateStudent(this.student)
+      .pipe(delay(2000))
+      .subscribe(() => {
+        console.log('Student data updated!');
+        this.isUpdaingSuccess = true;
+        this.isSendingPut = false;
+      });
+  }
+  cancel() {
+    console.log('Cancel method invoked');
+    this.location.back();
   }
 }

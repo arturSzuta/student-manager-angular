@@ -13,7 +13,8 @@
     </div>
     <div class="mb-4">
         <!-- button -->
-        <button [disabled]="isSendingPost" (click)="saveStudent(name.value , email.value)" type="button" class="btn btn-outline-primary">
+        <button [disabled]="isSendingPost" (click)="saveStudent(name.value , email.value)" type="button"
+            class="btn btn-outline-primary">
             <span *ngIf="isSendingPost" class="spinner-border spinner-border-sm" role="status"
                 aria-hidden="true"></span>
             Save

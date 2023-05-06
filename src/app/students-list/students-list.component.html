@@ -17,10 +17,13 @@
         <tr [ngClass]="{'table-primary':student.id == 2, 'table-success': student.id > 8}"
             *ngFor="let student of students">
             <td>{{student.id}}</td>
-            <td>{{student.name | uppercase}}</td>
+            <td>{{student.name | removeHonorific}}</td>
             <td><a *ngIf="student.id > 5" href="mailto:{{student.email}}">{{student.email}}</a> </td>
             <td>
-                <a routerLink="/edit-student/{{student.id}}" class="btn btn-outline-warning btn-margin-right btn-font-weight">Edit</a>
+                <a routerLink="/edit-student/{{student.id}}"
+                    class="btn btn-outline-warning btn-margin-right btn-font-weight">Edit</a>
+                <a routerLink="/detail-student/{{student.id'}}"
+                    class="btn btn-outline-info btn-margin-right btn-font-weight">Details</a>
                 <button (click)="deleteStudent(student)" type="button"
                     class="btn btn-outline-danger btn-margin-right btn-font-weight">Delete</button>
             </td>

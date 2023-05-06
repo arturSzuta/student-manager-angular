@@ -8,6 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { FormsModule } from '@angular/forms';
+import { RemoveHonorificPipe } from './remove-honorific.pipe';
+import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
+import { DetailStudentComponent } from './detail-student/detail-student.component';
+import { DetailStudentHeaderComponent } from './detail-student-header/detail-student-header.component';
+import { DetailStudentContentComponent } from './detail-student-content/detail-student-content.component';
+import { DetailStudentButtonsComponent } from './detail-student-buttons/detail-student-buttons.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +22,13 @@ import { FormsModule } from '@angular/forms';
     StudentsListComponent,
     CreateStudentComponent,
     EditStudentComponent,
+    RemoveHonorificPipe,
+    NavigationComponent,
+    FooterComponent,
+    DetailStudentComponent,
+    DetailStudentHeaderComponent,
+    DetailStudentContentComponent,
+    DetailStudentButtonsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
